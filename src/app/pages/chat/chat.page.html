@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-back-button></ion-back-button>
+  <ion-toolbar>
+    <ion-title size="large">{{ sessionTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  @for (item of messages; track $index) {
+  <app-chat-bubble [chatMessage]="item"></app-chat-bubble>
+  }
+
+
+</ion-content>
+<app-chat-footer (sendMessage)="sendUserMessage($event)">
+</app-chat-footer>

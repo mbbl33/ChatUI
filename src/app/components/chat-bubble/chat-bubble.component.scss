@@ -1,0 +1,36 @@
+ion-card {
+    width: fit-content;
+    max-width: 75%;
+}
+ion-card-header {
+    padding: 4px 8px;
+}
+
+ion-card-content {
+    padding: 8px;
+}
+
+.userCard {
+    justify-self: right;
+}
+
+.botCard {
+    justify-self: left;
+}
+
+.systemCard {
+    justify-self: center;
+    padding: 0;
+}
+.systemCard ion-card-content {
+    padding: 4px;
+}
+.botMessage{
+    text-align: left;
+}
+.userMessage{
+    text-align: right;
+}
+.systemMessage {
+    text-align: center;
+}

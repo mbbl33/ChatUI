@@ -1,0 +1,21 @@
+<ion-card [color]="cardColor" [ngClass]="{
+  'userCard': chatMessage.sender === 'USER',
+  'botCard': chatMessage.sender === 'BOT',
+  'systemCard': chatMessage.sender === 'SYSTEM'
+}">
+  @if(showTimestamp && chatMessage.hasTimestamp()){
+  <ion-card-header>
+    <ion-note [ngClass]="{
+        'userMessage': chatMessage.sender === 'USER',
+        'botMessage': chatMessage.sender === 'BOT',
+        'systemMessage': chatMessage.sender === 'SYSTEM'
+      }">
+      {{ chatMessage.timestamp | date:'short' }}
+    </ion-note>
+  </ion-card-header>
+  }
+  <ion-card-content [class.systemCard]="chatMessage.sender === 'SYSTEM'">
+    {{ chatMessage.message }}
+    <ng-content></ng-content>
+  </ion-card-content>
+</ion-card>
